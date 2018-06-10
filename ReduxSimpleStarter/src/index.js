@@ -28,15 +28,17 @@ class App extends Component {
 		return (
 			<div>
 				<SearchBar />
-				<VideoDetail video={this.state.selectedVideo} />
-				<VideoList
-					onVideoSelect= {selectedVideo => {this.setState( {selectedVideo} )} }
-					videos= {this.state.videos}
-				/>
+				<div class="row">
+					<VideoDetail video={this.state.selectedVideo} />
+					<VideoList
+						onVideoSelect= {selectedVideo => {this.setState( {selectedVideo} )} }
+						videos= {this.state.videos}
+					/>
+				</div>
 			</div>
 		);
 	}
 
 }
 //take this component and put it in the DOM
-ReactDOM.render(<App />, document.querySelector('.container'));
+ReactDOM.render(<App />, document.querySelector('.app'));
