@@ -13,25 +13,21 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			term: "",
 			videos: [],
 			selectedVideo: null
 		};
-		YTSearch({key: API_KEY, term: "Apple"}, videos => {
-			this.setState({
-				videos: videos,
-				selectedVideo: videos[0]
-			})
-		});
+		this.searchTerm("Ibiza");
 	}
 
 	render() {
 		return (
 			<div>
-				<SearchBar />
-				<div class="row">
+				<SearchBar onInputChange={term => this.searchTerm(term) }/>
+				<div className="row">
 					<VideoDetail video={this.state.selectedVideo} />
 					<VideoList
-						onVideoSelect= {selectedVideo => {this.setState( {selectedVideo} )} }
+						onVideoSelect= {selectedVideo => {this.setState({selectedVideo}) }}
 						videos= {this.state.videos}
 					/>
 				</div>
@@ -39,6 +35,14 @@ class App extends Component {
 		);
 	}
 
+	searchTerm(term) {
+		YTSearch({key: API_KEY, term: term}, videos => {
+			this.setState({
+				videos: videos,
+				selectedVideo: videos[0]
+			})
+		});
+	}
 }
 //take this component and put it in the DOM
 ReactDOM.render(<App />, document.querySelector('.app'));
