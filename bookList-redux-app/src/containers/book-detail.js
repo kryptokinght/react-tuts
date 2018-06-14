@@ -15,11 +15,12 @@ class BookDetail extends Component {
 		);
 	}
 }
-
+//maps the activeBook propert of state to props.book
+//the global redux state is available to container by default
 function mapStateToProps(state) {
 	return {
 		book: state.activeBook
 	};
 }
-
+//integrates redux's state management to React Application
 export default connect(mapStateToProps)(BookDetail);

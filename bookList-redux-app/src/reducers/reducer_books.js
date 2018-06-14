@@ -1,3 +1,4 @@
+//returns a list of all books to GLOBAL state of application
 export default function() {
 	return [
 		{title: "Harry Potter and the chamber of secrets"},

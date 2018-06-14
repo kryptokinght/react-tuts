@@ -6,6 +6,7 @@ import { bindActionCreators } from 'redux';
 class BookList extends Component {
 	renderList() {
 		return this.props.books.map(book => {
+			//action creator selectBook called when <li> clicked
 			return (
 				<li
 					key={book.title}
@@ -26,12 +27,14 @@ class BookList extends Component {
 	}
 }
 
+//maps the current global redux state to props
 function mapStateToProps(state) {
 	return {
 		books: state.books
 	};
 }
 
+//maps action creator selectBook() to props of <BookList>
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({selectBook: selectBook}, dispatch);
 }
