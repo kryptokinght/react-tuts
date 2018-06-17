@@ -17,3 +17,6 @@
    stated by the route itself( /posts/:id ).
 5. Create your first action creater. In this case it is fetchPosts() which
    fetches our particular selected post from the api and sends it to reducer.
+6. Create your first reducer reducer_posts for action FETCH_POSTS which redcues
+   the received posts data array into object form {1:{post1}, 2:{post2}, 3:{post3}}
+   using loadsh mapKeys(arrayName, '<YOUR_KEY>') function.
