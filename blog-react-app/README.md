@@ -22,4 +22,5 @@
    using loadsh mapKeys(arrayName, '<YOUR_KEY>') function.
 7. Integrating our <PostsIndex> with FETCH_POSTS action using connect in a
    shortcut way.
-8. 
+8. Call the fetchPosts() action creator from inside <PostsIndex> component.
+9. Display the posts as list inside the <PostsIndex> component.
