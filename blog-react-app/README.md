@@ -20,3 +20,6 @@
 6. Create your first reducer reducer_posts for action FETCH_POSTS which redcues
    the received posts data array into object form {1:{post1}, 2:{post2}, 3:{post3}}
    using loadsh mapKeys(arrayName, '<YOUR_KEY>') function.
+7. Integrating our <PostsIndex> with FETCH_POSTS action using connect in a
+   shortcut way.
+8. 
