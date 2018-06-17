@@ -12,7 +12,8 @@
 2. Determine the components to be used in each view.
 3. Determine the definition of a component.
 4. Determine the Redux state for our app. In this case it will only
-   contain one property 'posts' containing a list of post. We  won't
-   require a propert like 'activePost' because it will be implicitly
-   stated by the route itself(/posts/:id).
-5. 
+   contain one property 'posts' containing a list of all the posts. We  
+   won't require a property like 'activePost' because it will be implicitly
+   stated by the route itself( /posts/:id ).
+5. Create your first action creater. In this case it is fetchPosts() which
+   fetches our particular selected post from the api and sends it to reducer.
