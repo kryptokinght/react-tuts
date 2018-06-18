@@ -6,16 +6,22 @@ class PostsNew extends Component {
 
 	renderField(field) { //renders JSX for our <Field>
 	//the field argument wires our event handlers to our <Field> component.
+		const { meta: { touched, error },
+				label,
+				placeholder,
+				input } = field;
+
+		const className = `form-group ${touched && error ? 'is-invalid':''}`;
 		return (
-			<div className="form-group">
-				<label>{field.label}</label>
+			<div className={className}>
+				<label>{label}</label>
 				<input
 					className="form-control"
 					type="text"
-					placeholder={field.placeholder}
-					{...field.input} //mapping our event handlers inside field obj to our <input>
+					placeholder={placeholder}
+					{...input} //mapping our event handlers inside field obj to our <input>
 				/>
-				{field.meta.touched?field.meta.error:""}
+				{touched ? error : ""}
 			</div>
 		);
 	}
