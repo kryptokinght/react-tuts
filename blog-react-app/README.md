@@ -24,3 +24,7 @@
    shortcut way.
 8. Call the fetchPosts() action creator from inside <PostsIndex> component.
 9. Display the posts as list inside the <PostsIndex> component.
+10. Scaffold PostsNew component and add route configuration.
+11. Add navigation between Index(/) and New(/posts/new).
+12. Make action creator to save post.
+13. To handle the form input and its validation we will use redux-form(https://redux-form.com/). 
