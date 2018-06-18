@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form'; //reduxForm is our function helper
 //to connect our reduxForm to the FormReducer() function
 
@@ -58,6 +59,7 @@ class PostsNew extends Component {
 					type="text"
 				/>
 				<button className="btn btn-primary" type="submit">Submit</button>
+				<Link id="cancel-form" className="btn btn-danger" to="/">Cancel</Link>
 			</form>
 		);
 	}
