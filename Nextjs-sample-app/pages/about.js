@@ -1,12 +1,9 @@
-import Link from 'next/link';
+import Navbar from '../components/navbar';
 
 const About = () => {
 	return (
 		<div>
-			<ul>
-				<li><Link href="/"><a>Home</a></Link></li>
-				<li><Link href="/about"><a>About</a></Link></li>
-			</ul>
+			<Navbar />
 			<h1>Welcome to About Page</h1>
 			<p>This is a sample Nextjs application!</p>
 		</div>
