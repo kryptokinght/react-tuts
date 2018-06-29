@@ -1,5 +1,8 @@
-import Head from 'next/head';
-import Navbar from './Navbar';
+//import Head from 'next/head';
+//import Navbar from './Navbar';
+
+const Head = require('next/head');
+const Navbar = require('./navbar');
 
 
 const Layout = (props) => {

@@ -7,7 +7,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "test": "jest"
+    "test": "jest --watch",
+    "testwatch": "jest --watchAll"
   },
   "author": "",
   "license": "ISC",
@@ -18,7 +19,55 @@
     "react-dom": "^16.4.1"
   },
   "devDependencies": {
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.4",
     "eslint": "^5.0.1",
-    "jest": "^23.2.0"
+    "jest": "^23.2.0",
+    "react-addons-test-utils": "^15.6.2"
+  },
+  "babel": {
+    "env": {
+      "development": {
+        "presets": [
+          "next/babel"
+        ]
+      },
+      "production": {
+        "presets": [
+          "next/babel"
+        ]
+      },
+      "test": {
+        "presets": [
+          [
+            "next/babel",
+            {
+              "preset-env": {
+                "modules": "commonjs"
+              }
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "jest": {
+    "setupFiles": [
+      "<rootDir>/jest.setup.js"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/.next/",
+      "<rootDir>/node_modules/"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "singleQuote": true,
+    "tabWidth": 2,
+    "useTabs": false
   }
 }
