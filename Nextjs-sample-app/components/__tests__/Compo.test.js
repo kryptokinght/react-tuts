@@ -1,6 +1,6 @@
 import React from 'react';
 import Compo from '../Compo';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json'; //removes unnecessary JSON from snapshot
 
 describe('<Compo />', () => {
@@ -11,5 +11,9 @@ describe('<Compo />', () => {
         const wrapper = shallow(<Compo />);
         expect(shallowToJson(wrapper))
         .toMatchSnapshot();
+    });
+    it('should contain minanshu', () => {
+        const wrapper = mount(<Compo text="minanshu"/>);
+        expect(wrapper.props().text).toEqual("minanshu");        
     });
 });

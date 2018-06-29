@@ -2,6 +2,9 @@
 
 exports[`<Compo /> should render 1`] = `
 <div>
+  <p
+    id="text"
+  />
   Hello World
 </div>
 `;
