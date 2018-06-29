@@ -1,14 +1,14 @@
 import React from 'react';
-import Compo from '../Compo';
+import Names from '../Names';
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json'; //removes unnecessary JSON from snapshot
 
-describe('<Compo />', () => {
+describe('<Names />', () => {
     it('should be defined', () => {
-        expect(Compo).toBeDefined();
+        expect(Names).toBeDefined();
     });
     it('should render', () => {
-        const wrapper = shallow(<Compo />);
+        const wrapper = shallow(<Names />);
         expect(shallowToJson(wrapper))
         .toMatchSnapshot();
     });

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Names /> should render 1`] = `
+<div>
+  <ul
+    className="list-group"
+  >
+    <p>
+      Nothing to show
+    </p>
+  </ul>
+  <button
+    className="btn btn-lg btn-success"
+    onClick={[Function]}
+  >
+    Show
+  </button>
+</div>
+`;
