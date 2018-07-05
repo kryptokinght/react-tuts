@@ -8,7 +8,7 @@ class BookDetail extends Component {
 			return <div>Select a Book to get started</div>
 		}
 		return (
-			<div>
+			<div id="book-detail">
 				<h2>Book you Selected:</h2>
 				<em>{this.props.book.title}</em>
 			</div>
