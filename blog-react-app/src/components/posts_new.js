@@ -32,7 +32,7 @@ class PostsNew extends Component {
 	onSubmit(values) { //finally we get the validated values out of the form here
 		//this === component
 		this.props.createPost(values, () => {
-			this.props.history.push('/');	
+			this.props.history.push('/'); //makes sure that after submitting form data route goes to '/'
 		});
 		console.log(values);
 	}

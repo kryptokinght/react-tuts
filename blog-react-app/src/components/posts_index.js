@@ -6,8 +6,8 @@ import {connect} from 'react-redux';
 
 class PostsIndex extends Component {
 	//this method gets called when our Component renders
-	componentDidMount() {
-		this.props.fetchPosts();
+	componentDidMount() { //ORDER: (componentWillMount,render,ComponentDidMount)
+		this.props.fetchPosts(); 
 	}
 
 	renderPosts() {
@@ -35,6 +35,8 @@ class PostsIndex extends Component {
 	}
 }
 
+//the 'state' here is the global state of our app, the one provided by redux!!
+//It is also called the APPLICATION LEVEL STATE
 function mapStateToProps(state) {
 	return { posts: state.posts };
 }
