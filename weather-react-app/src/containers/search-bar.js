@@ -4,6 +4,10 @@ import { connect } from 'react-redux';
 import { fetchWeather } from '../actions';
 import { bindActionCreators } from 'redux';
 
+/*
+
+*/
+
 class SearchBar extends Component {
 	constructor(props) {
 		super(props);
