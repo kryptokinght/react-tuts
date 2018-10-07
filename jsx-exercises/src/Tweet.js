@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import './index.css';
+import './Tweet.css';
 
 function Avatar({hash}) {
     let url = `https://www.gravatar.com/avatar/${hash}`;

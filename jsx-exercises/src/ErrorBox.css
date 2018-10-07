@@ -1,0 +1,22 @@
+.error-box {
+    border: 1px solid red;
+    background-color: rgba(255, 0, 0, 0.4);
+    color: rgb(170, 15, 15);
+    font-family: "Helvetica", arial, sans-serif;
+    display: flex;
+    padding: 20px;
+    width: 320px;
+    border-radius: 6px;
+}
+
+.error-icon {
+    padding-right: 12px;
+    font-weight: 600;
+    font-size: 1.3em;
+    letter-spacing: 1.2px;
+}
+.error-text {
+    padding-left: 16px;
+    font-size: 1.1em;
+    letter-spacing: 1.5px;
+}

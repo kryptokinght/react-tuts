@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Tweet from './Tweet';
 import Envelope from './Envelope';
+import ChildrenExample from './ChildrenExample';
+import ErrorBox from './ErrorBox';
 
 const testTweet = {
     message: "Meow meow mushy mushy",
@@ -30,4 +32,13 @@ const toPerson = {
     }
 };
 
-ReactDOM.render( <Envelope toPerson={toPerson} fromPerson={fromPerson}/> , document.getElementById('root'));
+//ReactDOM.render( <Envelope toPerson={toPerson} fromPerson={fromPerson}/> , document.getElementById('root'));
+
+/* ReactDOM.render(
+    <ChildrenExample>
+        <h1>Header</h1>
+        <strong>Hello Chutiya</strong>
+    </ChildrenExample>
+, document.getElementById('root')); */
+
+ReactDOM.render(<ErrorBox>Something went wrong</ErrorBox>, document.getElementById('root'));
