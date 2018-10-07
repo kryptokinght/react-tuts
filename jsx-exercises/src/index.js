@@ -34,11 +34,19 @@ const toPerson = {
 
 //ReactDOM.render( <Envelope toPerson={toPerson} fromPerson={fromPerson}/> , document.getElementById('root'));
 
-/* ReactDOM.render(
-    <ChildrenExample>
+ReactDOM.render(
+    <ChildrenExample number={7}>
         <h1>Header</h1>
-        <strong>Hello Chutiya</strong>
+        <strong>1</strong>
+        <strong>2</strong>
+        <strong>3</strong>
+        <strong>4</strong>
+        <strong>5</strong>
+        <strong>6</strong>
+        <strong>7</strong>
+        <strong>8</strong>
+        <strong>9</strong>
     </ChildrenExample>
-, document.getElementById('root')); */
+, document.getElementById('root'));
 
-ReactDOM.render(<ErrorBox>Something went wrong</ErrorBox>, document.getElementById('root'));
+//ReactDOM.render(<ErrorBox>Something went wrong</ErrorBox>, document.getElementById('root'));
