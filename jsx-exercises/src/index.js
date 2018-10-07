@@ -1,13 +1,17 @@
-import React,  {Fragment} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import Tweet from './Tweet';
 
-function Tweet() {
-    return (
-        <div className="tweet">
-            Tweet
-        </div>
-    );
-}
+var testTweet = {
+    message: "Meow meow mushy mushy",
+    gravatar: "xyz",
+    author: {
+        handle: "catperson",
+        name: "IAMA Cat Person"
+    },
+    likes: 2,
+    retweets: 100,
+    timestamp: "2016-07-30 21:24:37"
+};
 
-ReactDOM.render(<Tweet/>, document.querySelector('#root'));
+ReactDOM.render( <Tweet tweet={testTweet}/> , document.getElementById('root'));
