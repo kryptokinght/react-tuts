@@ -54,7 +54,6 @@ const Time = ({time}) => {
         </span>
     );
 };
-
 Time.propTypes = {
     time: PropTypes.string.isRequired
 }
