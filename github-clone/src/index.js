@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
 import Time from './Time';
+import FileIcon from './FileIcon';
 import './index.css';
 
 function FileList({ files }) {
@@ -27,8 +28,8 @@ function FileListItem({file}) {
     return (
         <tr className="file-list-item">
             <td className="file-icon"><FileIcon file={file}/></td>
-            <td className="file-name"><FileName file={file}/></td>
-            <td className="commit-message"><CommitMessage commit={file.latestCommit} /></td>
+            <td className="file-name"><span>{file.name}</span></td>
+            <td className="commit-message"><span>{file.latestCommit.message}</span></td>
             <td className="time"><Time time={file.updated_at} /></td>
         </tr>
     );
@@ -36,40 +37,6 @@ function FileListItem({file}) {
 FileListItem.propTypes = {
     file: PropTypes.object.isRequired
 };
-
-function FileName({ file }) {
-    return (
-        <span>{file.name}</span>
-    );
-}
-FileName.propTypes = {
-    file: PropTypes.object.isRequired
-};
-
-
-function FileIcon({ file }) {
-    let icon = "fa-file-text-o";
-    if(file.type === "folder")
-        icon = "fa-folder";
-
-    return (
-            <i className={`fa ${icon}`}/>
-    );
-}
-FileIcon.propTypes = {
-    file: PropTypes.object.isRequired
-};
-
-function CommitMessage({ commit }) {
-    return (
-        <span>{commit.message}</span>
-    );
-}
-CommitMessage.propTypes = {
-    commit: PropTypes.object.isRequired
-};
-
-
 
 
 const files = [
