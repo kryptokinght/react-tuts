@@ -1,21 +1,52 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Tweet from './Tweet';
+
+import TweetBox from './TweetBox';
 import Envelope from './Envelope';
 import ChildrenExample from './ChildrenExample';
 import ErrorBox from './ErrorBox';
 
-const testTweet = {
-    message: "Meow meow mushy mushy",
-    gravatar: "xyz",
-    author: {
-        handle: "catperson",
-        name: "IAMA Cat Person"
+
+
+const tweets = [
+    {
+        id: 1,
+        message: "Take me to Andromeda Galaxy",
+        gravatar: "pucchi",
+        author: {
+            handle: "titliSharma",
+            name: "Puccchhhiii"
+        },
+        likes: 20354,
+        retweets: 576,
+        timestamp: "2018-10-11 21:24:37"
     },
-    likes: 2,
-    retweets: 100,
-    timestamp: "2016-07-30 21:24:37"
-};
+    {
+        id: 2,
+        message: "Please take me with you pucchi",
+        gravatar: "minmin",
+        author: {
+            handle: "minmin",
+            name: "Minanshu"
+        },
+        likes: 132450,
+        retweets: 1098,
+        timestamp: "2018-10-12 21:24:37"
+    },
+    {
+        id: 3,
+        message: "Nahi leke Jayega tereko Tatti kahin ka",
+        gravatar: "pucchi",
+        author: {
+            handle: "titliSharma",
+            name: "Puccchhhiii"
+        },
+        likes: 34560,
+        retweets: 675,
+        timestamp: "2018-10-13 21:24:37"
+    },
+    
+];
 
 const fromPerson = {
     name: "Minanshu Singh",
@@ -34,7 +65,7 @@ const toPerson = {
 
 //ReactDOM.render( <Envelope toPerson={toPerson} fromPerson={fromPerson}/> , document.getElementById('root'));
 
-ReactDOM.render(
+/* ReactDOM.render(
     <ChildrenExample number={7}>
         <h1>Header</h1>
         <strong>1</strong>
@@ -47,6 +78,7 @@ ReactDOM.render(
         <strong>8</strong>
         <strong>9</strong>
     </ChildrenExample>
-, document.getElementById('root'));
+, document.getElementById('root')); */
 
 //ReactDOM.render(<ErrorBox>Something went wrong</ErrorBox>, document.getElementById('root'));
+ReactDOM.render(<TweetBox tweets={tweets}/>, document.getElementById('root'));
