@@ -5,6 +5,7 @@ import TweetBox from './TweetBox';
 import Envelope from './Envelope';
 import ChildrenExample from './ChildrenExample';
 import ErrorBox from './ErrorBox';
+import CountingParent from './Counter';
 
 
 
@@ -81,4 +82,5 @@ const toPerson = {
 , document.getElementById('root')); */
 
 //ReactDOM.render(<ErrorBox>Something went wrong</ErrorBox>, document.getElementById('root'));
-ReactDOM.render(<TweetBox tweets={tweets}/>, document.getElementById('root'));
+//ReactDOM.render(<TweetBox tweets={tweets}/>, document.getElementById('root'));
+ReactDOM.render(<CountingParent />, document.getElementById('root'));
