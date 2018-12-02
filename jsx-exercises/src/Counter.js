@@ -8,8 +8,6 @@ class CountingParent extends React.Component {
     }
 
     increment = () => {
-        console.log("Increment Count", this.state.count);
-
         this.setState({
             count: this.state.count + 1
         });
@@ -20,6 +18,8 @@ class CountingParent extends React.Component {
 
         this.setState({
             count: 0
+        }, () => {
+            console.log("State changed");
         });
     }
 
@@ -34,12 +34,20 @@ class CountingParent extends React.Component {
     }
 }
 
-const Counter = ({ onAction }) => (
-    <button onClick={onAction}>ADD 1</button>
-);
+const Counter = ({ onAction }) =>  {
+    return (
+        <button onClick={onAction}>ADD 1</button>
+    );
+};
+Counter.propTypes = {
+        onAction: PropTypes.func.isRequired
+};
 
 const Reset = ({ onAction }) => (
     <button onClick={onAction}>Reset</button>
 );
+Reset.propTypes = {
+    onAction: PropTypes.func.isRequired
+};
 
 export default CountingParent;
