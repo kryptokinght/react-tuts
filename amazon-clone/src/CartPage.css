@@ -21,3 +21,8 @@
 .CartItem-removeOne {
   border-right: none;
 }
+.Cart-total {
+    float: right;
+    font-size: 24px;
+    padding-top: 6px;
+}

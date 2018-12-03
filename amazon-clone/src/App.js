@@ -28,10 +28,10 @@ class App extends React.Component {
   handleRemoveOne = item => {
     let index = this.state.cart.indexOf(item.id);
     this.setState({
-        cart : [
-            ...this.state.cart.slice(0, index),
-            ...this.state.cart.slice(index+1)
-        ]
+      cart: [
+        ...this.state.cart.slice(0, index),
+        ...this.state.cart.slice(index + 1)
+      ]
     });
   };
 
@@ -43,16 +43,20 @@ class App extends React.Component {
     }, {});
     // Create an array of items
     let cartItems = Object.keys(itemCounts).map(itemId => {
-      // Find the item by its id
       var item = items.find(item => item.id === parseInt(itemId, 10));
-      // Create a new "item" and add the 'count' property
       return {
         ...item,
         count: itemCounts[itemId]
       };
     });
 
-    return <CartPage items={cartItems} onAddOne={this.handleAddToCart} onRemoveOne={this.handleRemoveOne}/>;
+    return (
+      <CartPage
+        items={cartItems}
+        onAddOne={this.handleAddToCart}
+        onRemoveOne={this.handleRemoveOne}
+      />
+    );
   };
 
   renderContent() {
