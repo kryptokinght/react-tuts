@@ -14,11 +14,11 @@ import Input from "./Input";
 const tweets = [
   {
     id: 1,
-    message: "Take me to Andromeda Galaxy",
-    gravatar: "pucchi",
+    message: "This movie is shit",
+    gravatar: "manna",
     author: {
-      handle: "titliSharma",
-      name: "Puccchhhiii"
+      handle: "manojKumar",
+      name: "Manoj Kumar"
     },
     likes: 20354,
     retweets: 576,
@@ -26,11 +26,11 @@ const tweets = [
   },
   {
     id: 2,
-    message: "Please take me with you pucchi",
-    gravatar: "minmin",
+    message: "I am sorry for directing it :(",
+    gravatar: "anu",
     author: {
-      handle: "minmin",
-      name: "Minanshu"
+      handle: "anuragKashyap",
+      name: "Anurag Kashyap"
     },
     likes: 132450,
     retweets: 1098,
@@ -38,11 +38,11 @@ const tweets = [
   },
   {
     id: 3,
-    message: "Nahi leke Jayega tereko Tatti kahin ka",
-    gravatar: "pucchi",
+    message: "Tu tatti hi rahega",
+    gravatar: "manna",
     author: {
-      handle: "titliSharma",
-      name: "Puccchhhiii"
+      handle: "manoj",
+      name: "Manoj Kumar"
     },
     likes: 34560,
     retweets: 675,
