@@ -1,11 +1,15 @@
 import React from 'react';
 import Nav from './Nav';
+import ItemPage from './ItemPage';
+import {items} from './static-data';
+
 import './App.css';
 
 class App extends React.Component {
 
     state = {
-        activeTab: 0
+        activeTab: 0,
+        cart: []
     };
 
     handleTabChange = (index) => {
@@ -14,10 +18,17 @@ class App extends React.Component {
         });
     }
 
+    handleAddToCart = (item) => {
+        console.log("Added to cart");
+        this.setState({
+            cart : [...this.state.cart, item.id]
+        });
+    }
+
     renderContent() {
         switch(this.state.activeTab) {
             default:
-            case 0: return (<span>Items</span>);
+            case 0: return (<ItemPage items={items} onAddToCart={this.handleAddToCart}/>);
             case 1: return (<span>Cart</span>);
         }
     }   
@@ -26,7 +37,7 @@ class App extends React.Component {
         let {activeTab} = this.state;
         return ( 
             <div className='App'>
-                <Nav activeTab={activeTab} onTabChange={this.handleTabChange}/>
+                <Nav activeTab={activeTab} onTabChange={this.handleTabChange} cartSize={this.state.cart.length}/>
                 <main className="App-content">
                     {this.renderContent()}
                 </main>
