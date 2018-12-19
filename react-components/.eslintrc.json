@@ -1,0 +1,31 @@
+{
+    "extends": [
+        "airbnb-base",
+        "prettier"
+    ],
+    "env": {
+        "browser": true,
+        "node": false
+    },
+    "rules": {
+        "no-console": "off",
+        "no-underscore-dangle": "off",
+        "no-plusplus": "off",
+        "no-continue": "off",
+        "camelcase": "off",
+        "func-names": [
+            "error",
+            "never"
+        ],
+        "prefer-destructuring": [
+            "error",
+            {
+                "object": false,
+                "array": false
+            }
+        ]
+    },
+    "plugins": [
+        "prettier"
+    ]
+}
