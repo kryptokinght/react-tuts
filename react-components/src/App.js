@@ -6,7 +6,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <InputBox text="+1" />
+        <InputBox />
       </div>
     );
   }

@@ -1,13 +1,25 @@
 import React from 'react';
 
 class InputBox extends React.Component {
-    handleChange() {
 
+    state = {
+        value: "Enter here"
+    };
+
+    handleChange = (event) => {
+        this.setState({
+            value: event.target.value
+        });
     }
 
     render() {
         return (
-            <button onClick={this.handleChange}>{this.props.text}</button>
+            <div>
+                <p>{this.state.value}</p>
+                <input type="text" onChange={this.handleChange} value={this.state.value} />
+            </div>
         );
     }
 }
+
+export default InputBox;
