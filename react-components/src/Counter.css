@@ -1,0 +1,28 @@
+#result {
+    font-size: 5em;
+    padding: 0.8em;
+}
+
+.counter {
+    background-color:black;
+    color: beige;
+    font-size: 1.6em;
+    border: none;
+    padding: 0.6em;
+    margin-left: 0.4em;
+}
+
+#c0:hover {
+    background-color: beige;
+    color: black;
+}
+
+#c1:hover {
+    background-color: beige;
+    color: black;
+}
+
+#c2:hover {
+    background-color: beige;
+    color: black;
+}

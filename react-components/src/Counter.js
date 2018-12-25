@@ -1,4 +1,5 @@
 import React from 'react';
+import './Counter.css';
 
 class Counter extends React.Component {
 
@@ -8,14 +9,16 @@ class Counter extends React.Component {
 
     render() {
         return (
-            <button onClick={this.handleClick}> +{this.props.incremetValue} </button>
+            <button onClick={this.handleClick} id={`c${this.props.id}`} className="counter">
+                +{this.props.incremetValue}
+            </button>
         );
     }
 }
 
 function Result({ value }) {
     return (
-        <div>
+        <div id="result">
             {value}
         </div>
     );
