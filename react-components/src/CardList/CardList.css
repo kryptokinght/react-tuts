@@ -1,0 +1,29 @@
+.user-card {
+    display: inline-flex;
+    margin: 0.5em 0 1em 0.5em;
+}
+
+img {
+    height: 75px;
+}
+
+.info {
+    margin-left: 0.5em;
+    text-align: left;
+}
+
+.info-name {
+    font-size: 1.2em;
+    font-weight: 500;
+    padding-bottom: 0.2em;
+}
+
+.info-comp {
+    font-size: 0.9em;
+    font-weight: 400;
+}
+
+.user-card-list {
+    display: inline-flex;
+    flex-direction: column;
+}

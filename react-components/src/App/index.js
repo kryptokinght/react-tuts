@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Droppable from 'droppable';
-import InputBox from './InputBox';
-import { Counter, Result } from './Counter';
+import InputBox from '../InputBox';
+import { Counter, Result } from '../Counter';
 import './App.css';
 
 class App extends Component {
