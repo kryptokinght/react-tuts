@@ -13,12 +13,28 @@ function Stars({ numberOfStars }) {
     );
 }
 
-function Button(props) {
+function Button({ selectedNumbers, checkEqual, doesAnsMatch }) {
+    let checkBtn;
+    switch (doesAnsMatch) {
+        case true:
+            checkBtn = <button className="btn-success">
+                <i className="fa fa-check"></i>
+            </button>;
+            break;
+        case false:
+            checkBtn = <button className="btn-danger">
+                <i className="fa fa-times"></i>
+            </button>;
+            break;
+        default:
+            checkBtn = <button onClick={checkEqual}
+                className="equal-btn"
+                disabled={selectedNumbers.length === 0}>
+                = </button>;
+    }
     return (
         <div className="buttons">
-            <button>BUTTOn</button>
-            <button>BUTTOn</button>
-            <button>BUTTOn</button>
+            {checkBtn}
         </div>
     );
 }
@@ -37,7 +53,8 @@ class Game extends React.Component {
 
     state = {
         selectedNumbers: [],
-        numberOfStars: 1 + Math.floor(Math.random() * 9)
+        numberOfStars: 1 + Math.floor(Math.random() * 9),
+        doesAnsMatch: null
     };
 
     handleNumbersClick = (num) => {
@@ -55,15 +72,28 @@ class Game extends React.Component {
         });
     }
 
+    checkEqual = () => {
+        const { selectedNumbers, numberOfStars } = this.state;
+        let val = selectedNumbers.reduce((num, i) => { return num + i; });
+        if (val === numberOfStars)
+            this.setState({
+                doesAnsMatch: true
+            });
+        else
+            this.setState({
+                doesAnsMatch: false
+            });
+    }
+
     render() {
-        const { numberOfStars, selectedNumbers } = this.state;
+        const { numberOfStars, selectedNumbers, doesAnsMatch } = this.state;
         return (
             <div>
                 <div className="heading">Play Nine</div>
                 <hr />
                 <div className="top-box">
                     <Stars numberOfStars={numberOfStars} />
-                    <Button />
+                    <Button selectedNumbers={selectedNumbers} checkEqual={this.checkEqual} doesAnsMatch={doesAnsMatch} />
                     <Answers selectedNumbers={selectedNumbers} handleAnswersClick={this.handleAnswersClick} />
                 </div>
                 <Numbers selectedNumbers={selectedNumbers} handleNumbersClick={this.handleNumbersClick} />

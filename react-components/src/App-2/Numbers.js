@@ -4,7 +4,7 @@ function Numbers(props) {
 
     const numbersClassName = (num) => {
         if (props.selectedNumbers.indexOf(num) >= 0)
-            return 'selected';
+            return 'selected pointer-remove';
     }
 
     const numbersOnClick = (num) => {

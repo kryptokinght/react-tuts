@@ -29,18 +29,55 @@
 
 .answers {
   flex-basis: 33%;
+  flex-wrap: wrap;
   display: flex;
-  justify-content: center;
   margin: 0 1em 0 1em;
+  justify-content: flex-start;
   align-items: flex-start;
 }
 
 
 .buttons {
   flex-basis: 20%;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
-  justify-content: center;          
+  justify-content: center;
+  align-items: center;          
+}
+
+.equal-btn {
+  padding: 0.5em 0.7em;
+  margin: 1em;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.btn-success {
+  padding: 0.5em 0.9em;
+  margin: 1em;
+  font-size: 1.1em;
+  background-color: #00802b;
+  color: #e6ffee;
+  border: none;
+  border-radius: 4px;
+}
+
+.btn-success:focus {
+  outline-color: #00e64d;
+}
+
+.btn-danger {
+  padding: 0.5em 0.9em;
+  margin: 1em;
+  font-size: 1.1em;
+  background-color: #ff1a1a;
+  color: #e6ffee;
+  border: none;
+  border-radius: 4px;
+}
+
+.btn-danger:focus {
+  outline-color: red;
 }
 
 .numbers {
@@ -69,5 +106,9 @@ span.selected {
 span.used {
   background-color: #aaddaa;
   color: #99bb99;
+}
+
+span.pointer-remove {
+  cursor: default;
 }
 
