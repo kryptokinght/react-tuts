@@ -1,15 +1,17 @@
 import React from 'react';
 
-function Numbers(props) {
+function Numbers({ selectedNumbers, usedNumbers, handleNumbersClick }) {
 
     const numbersClassName = (num) => {
-        if (props.selectedNumbers.indexOf(num) >= 0)
+        if (selectedNumbers.indexOf(num) >= 0)
             return 'selected pointer-remove';
+        if (usedNumbers.indexOf(num) >= 0)
+            return 'used pointer-remove';
     }
 
     const numbersOnClick = (num) => {
-        if (props.selectedNumbers.indexOf(num) < 0)
-            props.handleNumbersClick(num);
+        if (selectedNumbers.indexOf(num) < 0)
+            handleNumbersClick(num);
     }
 
     const nums = [];

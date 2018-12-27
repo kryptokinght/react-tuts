@@ -1,10 +1,11 @@
 import React from 'react';
 
 import Numbers from './Numbers';
+import Buttons from './Buttons';
 
-function Stars({ numberOfStars }) {
+function Stars({ randomStars }) {
     const stars = [];
-    for (let i = 0; i < numberOfStars; i++)
+    for (let i = 0; i < randomStars; i++)
         stars.push(<i key={i} className="fa fa-star"></i>);
     return (
         <div className="stars">
@@ -13,37 +14,13 @@ function Stars({ numberOfStars }) {
     );
 }
 
-function Button({ selectedNumbers, checkEqual, doesAnsMatch }) {
-    let checkBtn;
-    switch (doesAnsMatch) {
-        case true:
-            checkBtn = <button className="btn-success">
-                <i className="fa fa-check"></i>
-            </button>;
-            break;
-        case false:
-            checkBtn = <button className="btn-danger">
-                <i className="fa fa-times"></i>
-            </button>;
-            break;
-        default:
-            checkBtn = <button onClick={checkEqual}
-                className="equal-btn"
-                disabled={selectedNumbers.length === 0}>
-                = </button>;
-    }
-    return (
-        <div className="buttons">
-            {checkBtn}
-        </div>
-    );
-}
 
-function Answers(props) {
+
+function Answers({ selectedNumbers, handleAnswersClick }) {
     return (
         <div className="answers">
-            {props.selectedNumbers.map((num, i) =>
-                <span onClick={() => { props.handleAnswersClick(num); }} key={i}>{num}</span>)}
+            {selectedNumbers.map((num, i) =>
+                <span onClick={() => { handleAnswersClick(num); }} key={i}>{num}</span>)}
         </div>
     );
 }
@@ -53,14 +30,26 @@ class Game extends React.Component {
 
     state = {
         selectedNumbers: [],
-        numberOfStars: 1 + Math.floor(Math.random() * 9),
-        doesAnsMatch: null
+        usedNumbers: [],
+        randomStars: 1 + Math.floor(Math.random() * 9),
+        isAnswerCorrect: null,
+        redrawsLeft: 5
     };
 
     handleNumbersClick = (num) => {
         this.setState({
+            isAnswerCorrect: null,
             selectedNumbers: [...this.state.selectedNumbers, num]
         });
+    }
+
+    acceptAnswer = () => {
+        this.setState(prevState => ({
+            usedNumbers: prevState.usedNumbers.concat(prevState.selectedNumbers),
+            selectedNumbers: [],
+            isAnswerCorrect: null,
+            randomStars: 1 + Math.floor(Math.random() * 9)
+        }))
     }
 
     handleAnswersClick = (num) => {
@@ -68,35 +57,54 @@ class Game extends React.Component {
         let newSelectedNumbers = this.state.selectedNumbers;
         newSelectedNumbers.splice(i, 1);
         this.setState({
+            isAnswerCorrect: null,
             selectedNumbers: newSelectedNumbers
         });
     }
 
     checkEqual = () => {
-        const { selectedNumbers, numberOfStars } = this.state;
-        let val = selectedNumbers.reduce((num, i) => { return num + i; });
-        if (val === numberOfStars)
+        const { selectedNumbers, randomStars } = this.state;
+        let selectedSum = selectedNumbers.reduce((num, i) => { return num + i; });
+        if (selectedSum === randomStars)
             this.setState({
-                doesAnsMatch: true
+                isAnswerCorrect: true
             });
         else
             this.setState({
-                doesAnsMatch: false
+                isAnswerCorrect: false
             });
     }
 
+    redraw = () => {
+        this.setState(prevState => ({
+            randomStars: 1 + Math.floor(Math.random() * 9),
+            redrawsLeft: prevState.redrawsLeft - 1
+        }));
+    }
+
     render() {
-        const { numberOfStars, selectedNumbers, doesAnsMatch } = this.state;
+        const { randomStars, selectedNumbers, isAnswerCorrect, usedNumbers, redrawsLeft } = this.state;
         return (
             <div>
                 <div className="heading">Play Nine</div>
                 <hr />
                 <div className="top-box">
-                    <Stars numberOfStars={numberOfStars} />
-                    <Button selectedNumbers={selectedNumbers} checkEqual={this.checkEqual} doesAnsMatch={doesAnsMatch} />
-                    <Answers selectedNumbers={selectedNumbers} handleAnswersClick={this.handleAnswersClick} />
+                    <Stars randomStars={randomStars} />
+                    <Buttons selectedNumbers={selectedNumbers}
+                        checkEqual={this.checkEqual}
+                        isAnswerCorrect={isAnswerCorrect}
+                        acceptAnswer={this.acceptAnswer}
+                        redraw={this.redraw}
+                        redrawsLeft={redrawsLeft}
+                    />
+                    <Answers selectedNumbers={selectedNumbers}
+                        handleAnswersClick={this.handleAnswersClick}
+                    />
                 </div>
-                <Numbers selectedNumbers={selectedNumbers} handleNumbersClick={this.handleNumbersClick} />
+                <Numbers usedNumbers={usedNumbers}
+                    selectedNumbers={selectedNumbers}
+                    handleNumbersClick={this.handleNumbersClick}
+                />
             </div>
         );
     }
