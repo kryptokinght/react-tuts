@@ -28,10 +28,12 @@ function Answers({ selectedNumbers, handleAnswersClick }) {
 
 class Game extends React.Component {
 
+    static randomNumber = () => 1 + Math.floor(Math.random() * 9);
+
     state = {
         selectedNumbers: [],
         usedNumbers: [],
-        randomStars: 1 + Math.floor(Math.random() * 9),
+        randomStars: Game.randomNumber(),
         isAnswerCorrect: null,
         redrawsLeft: 5
     };
@@ -48,7 +50,7 @@ class Game extends React.Component {
             usedNumbers: prevState.usedNumbers.concat(prevState.selectedNumbers),
             selectedNumbers: [],
             isAnswerCorrect: null,
-            randomStars: 1 + Math.floor(Math.random() * 9)
+            randomStars: Game.randomNumber()
         }))
     }
 
@@ -77,7 +79,7 @@ class Game extends React.Component {
 
     redraw = () => {
         this.setState(prevState => ({
-            randomStars: 1 + Math.floor(Math.random() * 9),
+            randomStars: Game.randomNumber(),
             redrawsLeft: prevState.redrawsLeft - 1
         }));
     }
