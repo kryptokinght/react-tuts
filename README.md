@@ -71,9 +71,10 @@ A few screenshots of the projects made using ReactJS.
 
 ## React Boilerplates
 
-* [react-slingshot](https://github.com/coryhouse/react-slingshot) - React + Redux starter kit / boilerplate with Babel, hot reloading, testing, linting and a working example app built in. ![stars badge](http://githubbadges.com/star.svg?user=facebook&repo=create-react-app)
+* [react-slingshot](https://github.com/coryhouse/react-slingshot) ![stars badge](http://githubbadges.com/star.svg?user=coryhouse&repo=react-slingshot) : 
+    React + Redux starter kit / boilerplate with Babel, hot reloading, testing, linting and a working example app built in. 
 
-* [create-react-app](https://github.com/facebook/create-react-app) - Set up a modern web app by running one command. https://facebook.github.io/create-react-app
+* [create-react-app](https://github.com/facebook/create-react-app) ![stars badge](http://githubbadges.com/star.svg?user=facebook&repo=create-react-app) : Set up a modern web app by running one command. https://facebook.github.io/create-react-app
 
 
 
