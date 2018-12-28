@@ -15,7 +15,7 @@ function Buttons({ selectedNumbers, checkEqual, isAnswerCorrect, acceptAnswer, r
             break;
         default:
             checkBtn = <button onClick={checkEqual}
-                className="equal-btn"
+                className="btn-equal"
                 disabled={selectedNumbers.length === 0}>
                 = </button>;
     }

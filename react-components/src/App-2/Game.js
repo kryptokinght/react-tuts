@@ -3,7 +3,7 @@ import React from 'react';
 import Numbers from './Numbers';
 import Buttons from './Buttons';
 
-function Stars({ randomStars }) {
+const Stars = ({ randomStars }) => {
     const stars = [];
     for (let i = 0; i < randomStars; i++)
         stars.push(<i key={i} className="fa fa-star"></i>);
@@ -14,9 +14,7 @@ function Stars({ randomStars }) {
     );
 }
 
-
-
-function Answers({ selectedNumbers, handleAnswersClick }) {
+const Answers = ({ selectedNumbers, handleAnswersClick }) => {
     return (
         <div className="answers">
             {selectedNumbers.map((num, i) =>
@@ -25,18 +23,31 @@ function Answers({ selectedNumbers, handleAnswersClick }) {
     );
 }
 
+const DoneFrame = ({ doneStatus, resetGame }) => {
+    return (
+        <div className="done-frame">
+            <div className="heading-short">{doneStatus}</div>
+            <button className="btn" onClick={resetGame}>Play Again</button>
+        </div>
+    );
+}
+
 
 class Game extends React.Component {
 
     static randomNumber = () => 1 + Math.floor(Math.random() * 9);
-
-    state = {
+    static initialState = () => ({
         selectedNumbers: [],
         usedNumbers: [],
         randomStars: Game.randomNumber(),
         isAnswerCorrect: null,
-        redrawsLeft: 5
-    };
+        redrawsLeft: 5,
+        doneStatus: null
+    });
+
+    state = Game.initialState();
+
+    resetGame = () => this.setState(Game.initialState());
 
     handleNumbersClick = (num) => {
         this.setState({
@@ -45,13 +56,35 @@ class Game extends React.Component {
         });
     }
 
-    acceptAnswer = () => {
-        this.setState(prevState => ({
+    gameOver = () => {
+        console.log(this.state.usedNumbers.length);
+        if (this.state.usedNumbers.length === 9) {
+            console.log("SDF");
+            return 'You Won!!';
+        }
+        else if (this.state.redrawsLeft === 0 && !this.isWinPossible())
+            return 'Game Over!';
+        else
+            return null;
+    }
+
+    isWinPossible = () => {
+        //to be implemented later
+        return false;
+    }
+
+    acceptAnswer = async () => {
+        await this.setState(prevState => ({
             usedNumbers: prevState.usedNumbers.concat(prevState.selectedNumbers),
             selectedNumbers: [],
             isAnswerCorrect: null,
             randomStars: Game.randomNumber()
-        }))
+        }));
+
+        if (this.gameOver())
+            this.setState({
+                doneStatus: this.gameOver()
+            });
     }
 
     handleAnswersClick = (num) => {
@@ -77,19 +110,32 @@ class Game extends React.Component {
             });
     }
 
-    redraw = () => {
-        this.setState(prevState => ({
-            randomStars: Game.randomNumber(),
+    redraw = async () => {
+        let prevStars = this.state.randomStars;
+        let currStars;
+        while ((currStars = Game.randomNumber()) === prevStars) { }
+        await this.setState(prevState => ({
+            randomStars: currStars,
             redrawsLeft: prevState.redrawsLeft - 1
         }));
+        if (this.gameOver())
+            this.setState({
+                doneStatus: this.gameOver()
+            });
     }
 
     render() {
-        const { randomStars, selectedNumbers, isAnswerCorrect, usedNumbers, redrawsLeft } = this.state;
+        const {
+            randomStars,
+            selectedNumbers,
+            isAnswerCorrect,
+            usedNumbers,
+            redrawsLeft,
+            doneStatus } = this.state;
         return (
             <div>
                 <div className="heading">Play Nine</div>
-                <hr />
+                <hr className="custom-hr" />
                 <div className="top-box">
                     <Stars randomStars={randomStars} />
                     <Buttons selectedNumbers={selectedNumbers}
@@ -103,10 +149,12 @@ class Game extends React.Component {
                         handleAnswersClick={this.handleAnswersClick}
                     />
                 </div>
-                <Numbers usedNumbers={usedNumbers}
-                    selectedNumbers={selectedNumbers}
-                    handleNumbersClick={this.handleNumbersClick}
-                />
+                {doneStatus ? <DoneFrame doneStatus={doneStatus} resetGame={this.resetGame} /> :
+                    <Numbers usedNumbers={usedNumbers}
+                        selectedNumbers={selectedNumbers}
+                        handleNumbersClick={this.handleNumbersClick}
+                    />
+                }
             </div>
         );
     }

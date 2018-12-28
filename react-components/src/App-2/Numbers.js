@@ -10,7 +10,7 @@ function Numbers({ selectedNumbers, usedNumbers, handleNumbersClick }) {
     }
 
     const numbersOnClick = (num) => {
-        if (selectedNumbers.indexOf(num) < 0)
+        if (selectedNumbers.indexOf(num) < 0 && usedNumbers.indexOf(num) < 0)
             handleNumbersClick(num);
     }
 
