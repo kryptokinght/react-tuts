@@ -48,6 +48,7 @@ console.log(x); // outputs [1,2,3,4]
 
 ### Play Nine Game
 ![Screenshot of the play nine game in action](/screenshots/play_nine.png)
+<hr />
 
 ### Amazon Layout clone
 **Items page**
@@ -55,12 +56,16 @@ console.log(x); // outputs [1,2,3,4]
 
 **Cart Page**
 ![Screenshot](/screenshots/amazon_cart.png)
+<hr />
+
 
 ### TweetBox
 ![Screenshot](/screenshots/tweet.png)
+<hr />
 
 ### Youtube layout Clone
 ![Screenshot](/screenshots/youtube_clone.png)
+<hr />
 
 ### BookList using Redux
 ![screenshot](/screenshots/booklist_redux.png)
@@ -68,6 +73,7 @@ console.log(x); // outputs [1,2,3,4]
 
 A few screenshots of the projects made using ReactJS.
 
+<hr />
 
 ## React Boilerplates
 
@@ -76,9 +82,9 @@ A few screenshots of the projects made using ReactJS.
 
 * [create-react-app](https://github.com/facebook/create-react-app) ![stars badge](http://githubbadges.com/star.svg?user=facebook&repo=create-react-app) : Set up a modern web app by running one command. https://facebook.github.io/create-react-app
 
+* [react-bolierplate](https://github.com/react-boilerplate/react-boilerplate) ![stars badge](http://githubbadges.com/star.svg?user=react-boilerplate&repo=react-boilerplate) : A highly scalable, offline-first foundation with the best developer experience and a focus on performance and best practices. https://www.reactboilerplate.com
 
-
-
+<hr />
 2017-2018 @kryptokinght
 
 
