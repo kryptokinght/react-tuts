@@ -1,4 +1,5 @@
 # React
+[Check out the project screenshots!](#project-screenshots)
 
 ## Why use React ?
 * flexibility
@@ -27,7 +28,36 @@ Frameworks like **Vue, Angular, Ember** are *template centric*. They tend to mak
 
 
 
+
 **NOTE** : Screenshots taken from this [Pluralsight course](https://app.pluralsight.com/player?name=a54f8f9e-b7f2-46e4-a5cd-aec10587ccf1&clip=0&course=react-big-picture&author=cory-house).
+
+
+# Project Screenshots
+
+### Play Nine Game
+![Screenshot of the play nine game in action](/screenshots/play_nine.png)
+
+### Amazon Layout clone
+**Items page**
+![Screenshot](/screenshots/amazon_clone.png)
+
+**Cart Page**
+![Screenshot](/screenshots/amazon_cart.png)
+
+### TweetBox
+![Screenshot](/screenshots/tweet.png)
+
+### Youtube layout Clone
+![Screenshot](/screenshots/youtube_clone.png)
+
+### BookList using Redux
+![screenshot](/screenshots/booklist_redux.png)
+
+
+A few screenshots of the projects made using ReactJS.
+
+2017-2018 @kryptokinght
+
 
 
 

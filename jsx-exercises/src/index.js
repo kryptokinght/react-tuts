@@ -83,7 +83,7 @@ const toPerson = {
 , document.getElementById('root')); */
 
 //ReactDOM.render(<ErrorBox>Something went wrong</ErrorBox>, document.getElementById('root'));
-//ReactDOM.render(<TweetBox tweets={tweets}/>, document.getElementById('root'));
+ReactDOM.render(<TweetBox tweets={tweets} />, document.getElementById('root'));
 //ReactDOM.render(<CountingParent />, document.getElementById('root'));
-// ReactDOM.render(<Sidebar />, document.getElementById("root"));
-ReactDOM.render(<Input />, document.getElementById("root"));
+//ReactDOM.render(<Sidebar />, document.getElementById("root"));
+//ReactDOM.render(<Input />, document.getElementById("root"));

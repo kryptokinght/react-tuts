@@ -24,10 +24,10 @@ FileList.propTypes = {
     files: PropTypes.array
 };
 
-function FileListItem({file}) {
+function FileListItem({ file }) {
     return (
         <tr className="file-list-item">
-            <td className="file-icon"><FileIcon file={file}/></td>
+            <td className="file-icon"><FileIcon file={file} /></td>
             <td className="file-name"><span>{file.name}</span></td>
             <td className="commit-message"><span>{file.latestCommit.message}</span></td>
             <td className="time"><Time time={file.updated_at} /></td>
@@ -41,7 +41,7 @@ FileListItem.propTypes = {
 
 const files = [
     {
-        id: 1, 
+        id: 1,
         name: "README.md",
         type: "file",
         updated_at: "2016-07-11 21:24:00",
@@ -58,6 +58,33 @@ const files = [
             message: "Initial Commit"
         },
     },
+    {
+        id: 3,
+        name: ".gitignore",
+        type: "file",
+        updated_at: "2016-07-12 12:24:00",
+        latestCommit: {
+            message: "add .gitignore"
+        },
+    },
+    {
+        id: 4,
+        name: "index.js",
+        type: "code",
+        updated_at: "2016-07-11 21:24:00",
+        latestCommit: {
+            message: "Initial Commit"
+        },
+    },
+    {
+        id: 5,
+        name: "server.js",
+        type: "code",
+        updated_at: "2016-07-11 21:24:00",
+        latestCommit: {
+            message: "Initial Commit"
+        },
+    },
 ]
 
-ReactDOM.render(<FileList files={files}/>, document.getElementById('root'));
+ReactDOM.render(<FileList files={files} />, document.getElementById('root'));
