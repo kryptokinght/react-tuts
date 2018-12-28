@@ -44,30 +44,32 @@ console.log(x); // outputs [1,2,3,4]
 **NOTE** : Screenshots taken from this [Pluralsight course](https://app.pluralsight.com/player?name=a54f8f9e-b7f2-46e4-a5cd-aec10587ccf1&clip=0&course=react-big-picture&author=cory-house).
 
 
-# Project Screenshots
+## Project Screenshots
 
-### Play Nine Game
+* ### Play Nine Game
 ![Screenshot of the play nine game in action](/screenshots/play_nine.png)
 <hr />
 
-### Amazon Layout clone
+* ### Amazon Layout clone
 **Items page**
+
 ![Screenshot](/screenshots/amazon_clone.png)
 
 **Cart Page**
+
 ![Screenshot](/screenshots/amazon_cart.png)
 <hr />
 
 
-### TweetBox
+* ### TweetBox
 ![Screenshot](/screenshots/tweet.png)
 <hr />
 
-### Youtube layout Clone
+* ### Youtube layout Clone
 ![Screenshot](/screenshots/youtube_clone.png)
 <hr />
 
-### BookList using Redux
+* ### BookList using Redux
 ![screenshot](/screenshots/booklist_redux.png)
 
 
